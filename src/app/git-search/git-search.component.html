@@ -1,0 +1,16 @@
+<div class="app-container">
+  <div class=" search search-middle" [class.search-top]="searchValue">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="../assets/Images/homeLogo.png" width="20%">
+      </div>
+    </div>
+    <div class="row">
+      <div class="fullWidth" [class.col-xs-12]="searchValue" [class.col-md-6]="searchValue" [class.col-sm-6]="searchValue">
+        <mat-form-field class="search-input">
+          <input matInput type="text" placeholder="Type make your search" (keyup)="onSearch($event.target.value)" [(ngModel)]="searchValue" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
