@@ -1,2 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;	
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+// Scrollbar Style
+
+*::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+*::-scrollbar-corner {
+    -moz-appearance: none !important;
+    background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 14px rgba(0,0,0,0.2);
+    background-color: #eaeaea;
+}
+
+*::scrollbar-track {
+    -moz-appearance: none !important;
+    box-shadow: inset 0 0 14px rgba(0,0,0,0.2);
+    background-color: #eaeaea;
+}
+
+*::-webkit-scrollbar {
+    height: 100%;
+    overflow: visible;
+    width: 7px;
+}
+
+*::scrollbar {
+    -moz-appearance: none !important;
+    height: 100%;
+    overflow: visible;
+    width: 7px;
+}
+
+
+*::-webkit-scrollbar-button {
+    height:0;
+    width: 0;
+    // background: rgba(0,0,0,.1)url('../images/up-down.png')no-repeat;
+    background: #e7e7e7;
+    background-size: 25px 25px;
+    background-position: 0px 0px;
+}
+*::scrollbar-button {
+    height: 0;
+
+    width: 0;
+    // background: rgba(0,0,0,.1)url('../images/up-down.png')no-repeat;
+    background-size: 25px 25px;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: rgba(110, 110, 110, 0.5);
+}

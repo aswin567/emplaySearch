@@ -15,15 +15,17 @@
   <mat-progress-bar mode="query" *ngIf="isLoading" class="top-progress-bar"></mat-progress-bar>
   </div>
   <div class="results" *ngIf="searchValue && searchResult.length !== 0 ">
-    <mat-card class="example-card col-xs-6 col-sm-3" *ngFor="let result of searchResult">
+
+    <mat-card class="example-card col-xs-12 col-sm-3" *ngFor="let result of searchResult">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + result.owner.avatar_url + ')'}"></div>
-        <mat-card-title>{{result.name}}</mat-card-title>
-        <mat-card-subtitle>{{result.full_name}}</mat-card-subtitle>
+        <mat-card-title><a [href]="result.html_url" target="_blank">{{result.name}}</a></mat-card-title>
+        <mat-card-subtitle >{{result.full_name}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p class="dis">{{result.description}}</p>
       </mat-card-content>
     </mat-card>
+   <div class="clearfix"></div>
   </div>
 </div>

@@ -1,34 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { GitSearchService } from './git-search.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs/Rx';
 import { Git } from './git';
 @Component({
   selector: 'app-git-search',
   templateUrl: './git-search.component.html',
   styleUrls: ['./git-search.component.scss'],
-   providers: [GitSearchService]
+  providers: [GitSearchService]
 })
 export class GitSearchComponent implements OnInit {
 
   // Declaration
-
+  searchSubscription;
   searchValue: string;
   searchResult: Array<Git> = [];
   isLoading: boolean;
-  timeout = null;
   constructor(private gitSearchService: GitSearchService, private matSnackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
   onSearch(value: string) {
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(function () {
+    if (this.searchSubscription) { this.searchSubscription.unsubscribe(); }
+    this.searchSubscription = Observable.timer(500).subscribe(() => {
       if (value.length !== 0) {
-    }
-    }, 500);
-    if (value.length !== 0) {
-    this.makeSearch(value);
-    }
+        this.makeSearch(value);
+      }
+    });
+
   }
 
   makeSearch(searchKeyword: string) {

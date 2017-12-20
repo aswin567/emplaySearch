@@ -24,7 +24,8 @@
     
 .top-progress-bar{
     margin-left: -23px;
-    margin-right: -23px;
+    /* margin-right: -23px; */
+    width: 103%;
 }
 }
 .search-middle{
@@ -60,9 +61,12 @@
 }
 
 .results{
-    margin-top:134px; 
+    padding-top: 134px;
+    background: #f9f9f9;
     .example-card {
         margin: 10px;
+        height: 150px;
+        overflow-y: auto;
       }
       
       .example-header-image {
